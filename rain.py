@@ -10,8 +10,8 @@ import sys
 import os
 
 def clear_screen():
-    """Clear the terminal screen."""
-    os.system('cls' if os.name == 'nt' else 'clear')
+    """Clear the terminal screen using ANSI escape codes."""
+    print('\033[2J\033[H', end='', flush=True)
 
 def get_terminal_size():
     """Get terminal dimensions."""
