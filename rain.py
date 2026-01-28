@@ -18,7 +18,7 @@ def get_terminal_size():
     try:
         size = os.get_terminal_size()
         return size.columns, size.lines
-    except:
+    except (OSError, ValueError):
         return 80, 24  # Default fallback size
 
 class RainDrop:
